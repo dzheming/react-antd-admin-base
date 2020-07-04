@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import screenfull from "screenfull";
-import { Icon, message, Tooltip } from "antd";
+import { message, Tooltip } from "antd";
 import "./index.less";
-
 const click = () => {
   if (!screenfull.isEnabled) {
     message.warning("you browser can not work");
@@ -26,11 +25,11 @@ const FullScreen = () => {
   }, []);
 
   const title = isFullscreen ? "取消全屏" : "全屏";
-  const type = isFullscreen ? "fullscreen-exit" : "fullscreen";
+  const Icon = require('@ant-design/icons')[isFullscreen ? "FullscreenExitOutlined" : "FullscreenOutlined"];
   return (
     <div className="fullScreen-container">
       <Tooltip placement="bottom" title={title}>
-        <Icon type={type} onClick={click} />
+          <Icon onClick={click}/>
       </Tooltip>
     </div>
   );

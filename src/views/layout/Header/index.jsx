@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Icon, Menu, Dropdown, Modal, Layout, Avatar } from "antd";
+import { Menu, Dropdown, Modal, Layout, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import { logout, getUserInfo } from "@/store/actions";
 import FullScreen from "@/components/FullScreen";
@@ -8,6 +8,7 @@ import Settings from "@/components/Settings";
 import Hamburger from "@/components/Hamburger";
 import BreadCrumb from "@/components/BreadCrumb";
 import "./index.less";
+import { CaretDownOutlined } from "@ant-design/icons";
 const { Header } = Layout;
 
 const LayoutHeader = (props) => {
@@ -49,7 +50,7 @@ const LayoutHeader = (props) => {
       <Menu.Item key="project">
         <a
           target="_blank"
-          href="https://github.com/NLRX-WJC/react-antd-admin-template"
+          href="https://github.com/dzheming/react-antd-admin-base"
           rel="noopener noreferrer"
         >
           项目地址
@@ -96,7 +97,7 @@ const LayoutHeader = (props) => {
             <Dropdown overlay={menu}>
               <div>
                 <Avatar shape="square" size="medium" src={avatar} />
-                <Icon style={{ color: "rgba(0,0,0,.3)" }} type="caret-down" />
+                <CaretDownOutlined style={{ color: "rgba(0,0,0,.3)" }}  />
               </div>
             </Dropdown>
           </div>

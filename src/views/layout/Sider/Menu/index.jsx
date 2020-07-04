@@ -35,6 +35,14 @@ class Meun extends Component {
     }
     return false;
   };
+
+  getIcon = (icon) => {
+    const Icon = require("@ant-design/icons")[
+      typeof icon === "string" ? icon : "CaretRightOutlined"
+    ];
+    return <Icon />;
+  };
+
   // 菜单渲染
   getMenuNodes = (menuList) => {
     // 得到当前请求的路由路径
@@ -45,6 +53,7 @@ class Meun extends Component {
           pre.push(
             <Menu.Item key={item.path}>
               <Link to={item.path}>
+                {this.getIcon(item.icon)}
                 <span>{item.title}</span>
               </Link>
             </Menu.Item>
@@ -67,6 +76,7 @@ class Meun extends Component {
               key={item.path}
               title={
                 <span>
+                  {this.getIcon(item.icon)}
                   <span>{item.title}</span>
                 </span>
               }

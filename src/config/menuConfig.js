@@ -6,19 +6,19 @@ const menuList = [
   {
     title: "首页",
     path: "/dashboard",
-    icon: "home",
+    icon: "HomeOutlined",
     roles:["admin","editor","guest"]
   },
   {
     title: "开发文档",
     path: "/doc",
-    icon: "file",
+    icon: "FileOutlined",
     roles:["admin","editor","guest"]
   },
   {
     title: "权限测试",
     path: "/permission",
-    icon: "lock",
+    icon: "LockOutlined",
     children: [
       {
         title: "权限说明",
@@ -45,7 +45,7 @@ const menuList = [
   {
     title: "关于作者",
     path: "/about",
-    icon: "user",
+    icon: "UserOutlined",
     roles:["admin","editor","guest"]
   },
 ];
