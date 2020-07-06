@@ -1,7 +1,7 @@
-import Loadable from 'react-loadable';
-import Loading from '@/components/Loading'
-const Dashboard = Loadable({loader: () => import(/*webpackChunkName:'Dashboard'*/'@/views/dashboard'),loading: Loading});
-const Error404 = Loadable({loader: () => import(/*webpackChunkName:'Error404'*/'@/views/error/404'),loading: Loading});
+import React from 'react';
+
+const Dashboard = React.lazy(() => import(/*webpackChunkName:'Dashboard'*/'@/views/dashboard'));
+const Error404 = React.lazy(() => import(/*webpackChunkName:'Error404'*/'@/views/error/404'));
 
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
