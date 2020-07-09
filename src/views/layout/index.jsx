@@ -9,7 +9,8 @@ import TagsView from "./TagsView";
 const Main = (props) => {
   const { tagsView } = props;
   return (
-    <Layout style={{ minHeight: "100vh"}}>
+    <Layout
+     style={{ minHeight: "100vh"}}>
       <Sider />
       <Layout>
         <Header />

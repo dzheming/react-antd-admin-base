@@ -24,7 +24,7 @@ const LayoutContent = (props) => {
     return role === "admin" || !route.roles || route.roles.includes(role);
   };
   return (
-    <Content style={{ height: "calc(100% - 100px)" }}>
+    <Content style={{ height: "calc(100% - 100px)", marginTop: "2px" }}>
       <TransitionGroup>
         <CSSTransition
           key={location.pathname}

@@ -1,11 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Row, Col } from "antd";
 import errImg from "@/assets/images/404.png";
 import "./index.less";
 
-const NotFound = (props) => {
-  const { history } = props;
-  const goHome = () => history.replace("/");
+const NotFound = () => {
+  let history = useHistory();
+  const goHome = () => {
+    history.push("/")
+  };
   return (
     <Row className="not-found">
       <Col span={12}>
