@@ -104,7 +104,7 @@ class TagList extends Component {
     const { taglist, history } = this.props;
     const currentPath = history.location.pathname;
     return (
-      <>
+        <>
         <Scrollbars
           autoHide
           autoHideTimeout={1000}

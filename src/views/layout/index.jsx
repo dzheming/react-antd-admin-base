@@ -8,15 +8,17 @@ import Sider from "./Sider";
 import TagsView from "./TagsView";
 const Main = (props) => {
   const { tagsView } = props;
+  const { Footer } = Layout;
   return (
     <Layout
-     style={{ minHeight: "100vh"}}>
+    style={{ minHeight: "100vh" }}>
       <Sider />
       <Layout>
         <Header />
         {tagsView ? <TagsView /> : null}
         <Content />
         <RightPanel />
+        <Footer style={{ textAlign: 'center' }}>Admin Manager ©2020 Created by ZM ABEL</Footer>
       </Layout>
     </Layout>
   );

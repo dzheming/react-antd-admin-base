@@ -7,7 +7,7 @@ import { login, getUserInfo } from "@/store/actions";
 import LoginForm from "../loginForm";
 
 const Login = (props) => {
-    const { token } = props;
+  const { token } = props;
 
   if (token) {
     return <Redirect to="/dashboard" />;
@@ -18,12 +18,23 @@ const Login = (props) => {
         <div className="panel">
           <div className="welcome">
             <div className="hd">
-              <DingdingOutlined className="logo" /> 帮助中心 &gt;
+              <DingdingOutlined className="logo" />{" "}
+              <a
+                href="https://react.docschina.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                帮助中心 &gt;{" "}
+              </a>
             </div>
             <h2>欢迎使用</h2>
             <p>本项目是一个学习项目</p>
+            <p>主要用到得技术有React,Redux,Antd4.</p>
+            <p>一边学习一边完善，也是做一个学习笔记来使用。</p>
           </div>
-          <div className="form"><LoginForm/></div>
+          <div className="form">
+            <LoginForm />
+          </div>
         </div>
       </div>
     </div>

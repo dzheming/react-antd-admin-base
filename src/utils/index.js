@@ -1,3 +1,4 @@
+import md5 from 'md5';
 export function debounce(func, wait, immediate) {
     let timeout, args, context, timestamp, result;
   
@@ -66,4 +67,11 @@ export function debounce(func, wait, immediate) {
     
     let strDate = Y+M+D+h+m+s;
     return strDate;
+  }
+
+  export function mapRequestParams(data, action) {
+      let params = {};
+      params.all_param = data;
+      params.msg_digest = md5(md5(JSON.stringify(data)) + "tHr6ZaAv5vX792XacsSaEkVu" + action);
+      return params;
   }

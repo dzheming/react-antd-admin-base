@@ -5,7 +5,6 @@ const {
   addWebpackAlias,
 } = require("customize-cra");
 const path = require("path");
-const { getThemeVariables } = require('antd/dist/theme');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
@@ -34,9 +33,14 @@ module.exports = override(
   addLessLoader({
     lessOptions: {
       javascriptEnabled: true,
-      modifyVars: getThemeVariables({
-        dark: false,
-      }),
+      modifyVars:  { 
+          '@primary-color': '#1DA57A', 
+          '@font-size-base': '14px;', 
+          '@text-color': 'rgba(0, 0, 0, 0.65)', 
+          '@border-radius-base': '4px', 
+          '@border-color-base': '#3cb371',
+          '@box-shadow-base': '0 3px 6px -4px rgba(23,132,98,.12),0 6px 16px 0 rgba(23,132,98,.08),0 9px 28px 8px rgba(23,132,98,.05)',
+        },
     },
   }),
 

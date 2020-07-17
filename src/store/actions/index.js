@@ -16,6 +16,6 @@ export {
   deleteTag,
   closeOtherTags,
   changeSetting,
-  toggleSiderBar, 
+  toggleSiderBar,
   toggleSettingPanel,
 };

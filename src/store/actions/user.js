@@ -1,5 +1,6 @@
 import * as types from "../action-types";
 import { reqUserInfo } from "@/api/user";
+import { removeToken } from "@/utils/auth";
 
 export const getUserInfo = (token) => (dispatch) => {
   return new Promise((resolve, reject) => {
@@ -11,6 +12,8 @@ export const getUserInfo = (token) => (dispatch) => {
           dispatch(setUserInfo(userInfo));
           resolve(data);
         } else {
+          dispatch(resetUser());
+          removeToken()
           const msg = data.message;
           reject(msg);
         }
